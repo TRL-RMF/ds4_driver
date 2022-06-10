@@ -22,7 +22,14 @@ generate_messages(
 
 catkin_package()
 
-# catkin_install_python(PROGRAMS
-#   nodes/ds4_driver_node.py
-#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+catkin_install_python(PROGRAMS
+  nodes/ds4_driver_node.py
+  nodes/ds4_twist_node.py
+  nodes/demo.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(
+  DIRECTORY launch src config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
